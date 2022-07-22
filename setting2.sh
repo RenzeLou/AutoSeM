@@ -1,0 +1,2 @@
+python main.py --tasks CoLA_MNLIMisMatched_WNLI --random_seed 42 --setting 2 --encoder_type 1 --learning_rate 0.001 --stage 3 --cuda 1 --max_steps 200 --train_batch_size 16 --train_batch_num 200 --eval_batch_size 8 --steps_per_eval 20
+python main.py --tasks WNLI_MRPC_QQP_MNLIMisMatched --random_seed 42 --setting 2 --encoder_type 1 --learning_rate 0.001 --stage 3 --cuda 1 --max_steps 200 --train_batch_size 16 --train_batch_num 20 --eval_batch_size 8 --steps_per_eval 40

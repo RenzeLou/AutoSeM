@@ -1,0 +1,1 @@
+{"labels": {"0": "1", "1": "0"}, "train": {"instance_num": 635, "instance_max_len": 55}, "dev": {"instance_num": 71, "instance_max_len": 53}, "test": {"instance_num": 146, "instance_max_len": 49}}

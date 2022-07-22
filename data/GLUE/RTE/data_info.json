@@ -1,0 +1,1 @@
+{"labels": {"0": "not_entailment", "1": "entailment"}, "train": {"instance_num": 2490, "instance_max_len": 239}, "dev": {"instance_num": 277, "instance_max_len": 164}, "test": {"instance_num": 3000, "instance_max_len": 193}}

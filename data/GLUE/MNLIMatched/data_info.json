@@ -1,0 +1,1 @@
+{"labels": {"0": "neutral", "1": "entailment", "2": "contradiction"}, "train": {"instance_num": 391176, "instance_max_len": 40584}, "dev": {"instance_num": 9714, "instance_max_len": 11318}, "test": {"instance_num": 9796, "instance_max_len": 208}}
