@@ -1,6 +1,0 @@
-Namespace(cuda='5', decay_ratio=0.3, dropout_rate=0.5, embedding_dim=1024, encoder_type=1, eval_batch_size=8, full_name='bert-base-cased', infer=False, learning_rate=0.001, logdir='./cache', max_steps=200, model_file_path=None, num_layers=2, num_units=512, random_sampler=True, random_seed=42, setting=0, stage=1, steps_per_eval=8, tasks='MRPC_CoLA_MNLIMatched_QNLI_QQP_RTE_SST-2_WNLI', train_batch_num=10, train_batch_size=16, trial_num=10, use_hidden_state=False, warm_up_step=0)
-begin experiment, chose stage 1 
-You are running stage 1, set 'steps_per_eval' to 1 now!
-=== Build model ===
-Note you are utilizing Bi-LSTM
-Initializing ELMo
