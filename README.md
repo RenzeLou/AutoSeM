@@ -1,4 +1,8 @@
-## build conda virtual environment
+A reproduction for paper -- AutoSeM: Automatic Task Selection and Mixing in Multi-Task Learning [[paper](https://aclanthology.org/N19-1355/)] [[origin code](https://github.com/HanGuo97/AutoSeM)].
+
+
+## Preparations
+### 1. Build Environment
 
 ```bash
 conda create -n AutoSem python=3.6
@@ -13,22 +17,24 @@ pip install -r requirements.txt
 In case of an error interrupt, use the following command:
 
 ```bash
-while read requirement; do  pip install $requirement; done < requirements.txt
+while read requirement; do pip install $requirement; done < requirements.txt
 ```
 
-## data process
+### 2. Data Processing
+
+All the datasets have already been processed and split (see `data/GLUE`), however, you can do it by yourself as long as you:
 
 1. Use the ``.ipyng`` file under each directory to process specific task, you can use ``jupyter notebook`` and the dependency is simple ``python3`` .After running the notebook, you will obtain ``{train/dev/test}.json`` file and a ``data_info.json``. 
-2. Use the ``format.py`` to reprocess all ``.json``, then you will get ``{train/dev/test}_format.json`` file.
+2. Use the ``format.py`` to reprocess all the ``.json`` files, then you will get ``{train/dev/test}_format.json`` files.
 
-## download pre-trained language model
+### 3. Download Pre-trained Resources
 
- In our experiments, we need **ELMO** and **BERT family** (bert-base-uncased, bert-base-cased, bert-large-uncased, bert-large-cased, roberta-base, roberta-large).
+ In our experiments, we need **ELMO** and **BERT family** (i.e., bert-base-uncased, bert-base-cased, bert-large-uncased, bert-large-cased, roberta-base, roberta-large).
 
-- ELMO: We use allennlp's original [ELMO model](https://allennlp.org/elmo), you should put weight and option to ``cache/elmo/``
-- BERT: We use [huggingface](https://github.com/huggingface)/**[transformers](https://github.com/huggingface/transformers)**, the BERT family can be download automatically(see doc). Please cache all model's directories at ``cache/``
+- **ELMO**: We use allennlp's original [ELMO model](https://allennlp.org/elmo), you should put weight and option to ``cache/elmo/``.
+- **BERT**: We use [huggingface](https://github.com/huggingface)/**[transformers](https://github.com/huggingface/transformers)**, the BERT family can be download automatically (see the doc of huggingface). Pls cache all model's directories at ``cache/``.
 
-## auto task selection
+## Auto Task Selection
 
 ```bash
 python main.py --tasks MRPC_CoLA_MNLIMatched_QNLI_QQP_RTE_SST-2_WNLI --random_seed 42 --setting 0 --encoder_type 1 --learning_rate 0.001 --stage 1 --cuda 7 --max_steps 200 --train_batch_size 16 --train_batch_num 10 --eval_batch_size 8 --steps_per_eval 8 
