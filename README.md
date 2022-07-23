@@ -20,6 +20,16 @@ In case of an error interrupt, use the following command:
 while read requirement; do pip install $requirement; done < requirements.txt
 ```
 
+The main requirement is `torch>=1.3.0 `. We use `torch==1.7.0` installed from `.whl`. 
+
+```bash
+wget https://download.pytorch.org/whl/cu110/torch-1.7.0%2Bcu110-cp36-cp36m-linux_x86_64.whl
+wget https://download.pytorch.org/whl/cu110/torchvision-0.8.0-cp36-cp36m-linux_x86_64.whl
+pip install torch-1.7.0+cu110-cp36-cp36m-linux_x86_64.whl
+pip install torchvision-0.8.0-cp36-cp36m-linux_x86_64.whl
+rm torch-1.7.0+cu110-cp36-cp36m-linux_x86_64.whl torchvision-0.8.0-cp36-cp36m-linux_x86_64.whl
+```
+
 ### 2. Data Processing
 
 All the datasets have already been processed and split (see `data/GLUE`), however, you can do it by yourself as long as you:
